@@ -545,11 +545,11 @@ RUN apt -qqy update \
 # libav-tools (avconv): a fork of ffmpeg
 #   a better alternative to Pyvnc2swf
 #   (use in Ubuntu <= 14) packages: libav-tools libx264-142
-RUN apt -qqy update \
-  && apt -qqy --no-install-recommends install \
-    libav-tools \
-  && rm -rf /var/lib/apt/lists/* \
-  && apt -qyy clean
+##RUN apt -qqy update \
+##  && apt -qqy --no-install-recommends install \
+##    libav-tools \
+##  && rm -rf /var/lib/apt/lists/* \
+##  && apt -qyy clean
 
 # ------------------------#
 # Sauce Connect Tunneling #
