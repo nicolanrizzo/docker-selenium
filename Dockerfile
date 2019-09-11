@@ -27,6 +27,10 @@ RUN printf "\033[1;32mFROM ubuntu:${UBUNTU_FLAVOR}-${UBUNTU_DATE} \033[0m\n"
 RUN  echo "deb http://archive.ubuntu.com/ubuntu ${UBUNTU_FLAVOR} main universe\n" > /etc/apt/sources.list \
   && echo "deb http://archive.ubuntu.com/ubuntu ${UBUNTU_FLAVOR}-updates main universe\n" >> /etc/apt/sources.list \
   && echo "deb http://archive.ubuntu.com/ubuntu ${UBUNTU_FLAVOR}-security main universe\n" >> /etc/apt/sources.list
+RUN apt -qqy update \
+  && apt -qqy install \
+  gnupg
+
 
 MAINTAINER Diego Molina <diemol@gmail.com>
 MAINTAINER Leo Gallucci <elgalu3+dosel@gmail.com>
